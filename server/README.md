@@ -90,3 +90,13 @@ content-type: application/octet-stream
 bin.data
 
 ```
+# nexe
+## nexeのインストール
+npm install nexe -g
+
+## nasmのインストール
+https://www.nasm.us/
+https://www.nasm.us/pub/nasm/releasebuilds/2.16.01/win64/
+
+## ビルド
+nexe -i dist\src\index.js --resource "./../app/dist/**/*" --verbose --output ../app.exe --target windows-x64-6.11.2
