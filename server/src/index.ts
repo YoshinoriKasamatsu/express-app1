@@ -9,6 +9,10 @@ app.use(express.json());
 app.use(express.raw());
 
 
+app.post('/api/login', (req, res) => {
+  console.log("login");
+  console.log(req.body);
+});
 
 app.get('/api/sayhello', (req, res) => {
   res.send('hello ' + req.body);
