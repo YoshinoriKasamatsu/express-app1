@@ -1,4 +1,4 @@
 
 export namespace Config{
-    export const staticFilesPath = '../static';
+    export const staticFilesPath = '../../app/dist/app';
 }
