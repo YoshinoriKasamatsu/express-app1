@@ -63,12 +63,12 @@ nodemon --help
 https://github.com/remy/nodemon/blob/master/doc/sample-nodemon.md
 
 
-# Expressについて
-公式：
-  https://expressjs.com/ja/api.html#express.json
-参考：
-  https://www.geeksforgeeks.org/express-js-express-json-function/?ref=lbp
-  https://qiita.com/atlansien/items/c587a0bf2f7f9022107c
+# Expressについて  
+公式：  
+  https://expressjs.com/ja/api.html#express.json  
+参考：  
+  https://www.geeksforgeeks.org/express-js-express-json-function/?ref=lbp  
+  https://qiita.com/atlansien/items/c587a0bf2f7f9022107c  
 
 
 # REST Clientについて
