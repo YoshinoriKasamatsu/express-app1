@@ -16,10 +16,10 @@ export class ExcelDataStore{
     loadData(){
 
         const dataWb = fs.watch(this.dataFilepath, { },async () => {
-            this.isReadLock = true;
             if(this.isReadLock){
                 return;
             }
+            this.isReadLock = true;
             while(true){
                 let isSuccess = false;
                 try{
@@ -29,6 +29,7 @@ export class ExcelDataStore{
     
                 }                
                 if(isSuccess){
+                    console.log("データ更新");
                     this.isReadLock = false;
                     break;
                 }
@@ -39,7 +40,11 @@ export class ExcelDataStore{
     private readExcelData() {
         const book = XLSX.readFile(this.dataFilepath, {});
         const sheet = book.Sheets['todo'];
-        const todos = XLSX.utils.sheet_to_json(sheet);
-        console.log(todos);
+        this.todos = [];
+        this.todos = XLSX.utils.sheet_to_json(sheet);
+    }
+
+    public getTodos(): Todo[] {
+        return this.todos;
     }
 }

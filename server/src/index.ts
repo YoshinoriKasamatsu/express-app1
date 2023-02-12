@@ -20,19 +20,12 @@ app.post('/api/login', (req, res) => {
   console.log(req.body);
 });
 
-app.get('/api/sayhello', (req, res) => {
-  res.send('hello ' + req.body);
+app.get('/api/todos', (req, res) => {
+  const todos = excelDataStore.getTodos();
+  res.set('content-type', 'application/json');
+  res.send(todos);
 });
 
-app.post('/api/sayhellobin', (req, res) => {
-  console.log(req.body);
-  res.send('hello ' + req.body);
-});
-
-app.post('/api/sayhellojson', (req, res) => {
-  console.log(req.body);
-  res.send('hello ' + req.body);
-});
 
 app.use('/', express.static(path.join(__dirname, Config.staticFilesPath)));
 app.use('/*', express.static(path.join(__dirname, Config.staticFilesPath)));
