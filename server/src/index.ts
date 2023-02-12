@@ -1,16 +1,22 @@
 import express from "express";
 import path from "path";
 import { Config } from "./config";
+import fs from "fs";
+import { ExcelDataStore } from "./data-store/excel-data-store";
 
 const port = 3000;
 const app = express();
+
+// データロード
+const excelDataStore = new ExcelDataStore();
+excelDataStore.loadData();
+
 
 app.use(express.json());
 app.use(express.raw());
 
 
 app.post('/api/login', (req, res) => {
-  console.log("login");
   console.log(req.body);
 });
 
